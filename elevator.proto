@@ -4,7 +4,8 @@ package elevator;
 enum ResponseCode {
   CARRY_ON = 0;
   SOFTWARE_UPDATE = 1;
-  EXIT = 2;
+  CONFIG_UPDATE = 2;
+  EXIT = 3;
 }
 
 service Elevator {
