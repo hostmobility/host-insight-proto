@@ -8,11 +8,16 @@ enum ResponseCode {
 }
 
 service Elevator {
+  rpc HeartBeat (Id) returns (Reply);
   rpc SendValues (Values) returns (Reply);
   rpc SendPosition (Point) returns (Reply);
 }
 
-message Values{
+message Id {
+  string unit_id = 1;
+}
+
+message Values {
   string unit_id = 1;
   repeated Value measurements = 2;
 }
