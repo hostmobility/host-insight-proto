@@ -8,21 +8,21 @@ enum ResponseCode {
   EXIT = 3;
 }
 
-enum StausCode {
+enum StatusCode {
   OK = 0;
   WARNING = 1;
   ERROR = 2;
 }
 
 service Elevator {
-  rpc HeartBeat (Staus) returns (Reply);
+  rpc HeartBeat (Status) returns (Reply);
   rpc SendValues (Values) returns (Reply);
   rpc SendPosition (Point) returns (Reply);
   rpc SendCanMessage (CanMessage) returns (Reply);
 }
 
-message Staus {
-  StausCode code = 1;
+message Status {
+  StatusCode code = 1;
 }
 
 message Values {
