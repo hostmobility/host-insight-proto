@@ -19,6 +19,7 @@ service Elevator {
   rpc SendValues (Values) returns (Reply);
   rpc SendPosition (Point) returns (Reply);
   rpc SendCanMessage (CanMessage) returns (Reply);
+  rpc SendCanMessageStream (stream CanMessage) returns (Reply);
 }
 
 message Status {
