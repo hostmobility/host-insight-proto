@@ -1,18 +1,6 @@
 syntax = "proto3";
 package elevator;
-
-enum ResponseCode {
-  CARRY_ON = 0;
-  SOFTWARE_UPDATE = 1;
-  CONFIG_UPDATE = 2;
-  EXIT = 3;
-}
-
-enum StatusCode {
-  OK = 0;
-  WARNING = 1;
-  ERROR = 2;
-}
+import "enums.proto";
 
 service Elevator {
   rpc HeartBeat (Status) returns (Reply);
@@ -23,7 +11,7 @@ service Elevator {
 }
 
 message Status {
-  StatusCode code = 1;
+  enums.StatusCode code = 1;
 }
 
 message Values {
@@ -36,7 +24,7 @@ message Value {
 }
 
 message Reply {
-  ResponseCode rc = 1;
+  enums.ResponseCode rc = 1;
 }
 
 message Point {
@@ -52,7 +40,7 @@ message CanMessage {
 message CanSignal {
   string signal_name = 1;
   string unit = 2;
-  oneof value 
+  oneof value
   {
     bool val_bool = 3;
     double val_f64 = 4;

@@ -1,0 +1,15 @@
+syntax = "proto3";
+package enums;
+
+enum ResponseCode {
+  CARRY_ON = 0;
+  SOFTWARE_UPDATE = 1;
+  CONFIG_UPDATE = 2;
+  EXIT = 3;
+}
+
+enum StatusCode {
+  OK = 0;
+  WARNING = 1;
+  ERROR = 2;
+}
