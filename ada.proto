@@ -1,8 +1,10 @@
 syntax = "proto3";
-package elevator;
-import "enums.proto";
 
-service Elevator {
+package ada;
+
+import public "ada_enums.proto";
+
+service Ada {
   rpc HeartBeat (Status) returns (Reply);
   rpc SendValues (Values) returns (Reply);
   rpc SendPosition (Point) returns (Reply);
@@ -11,7 +13,7 @@ service Elevator {
 }
 
 message Status {
-  enums.StatusCode code = 1;
+  StatusCode code = 1;
 }
 
 message Values {
@@ -24,7 +26,7 @@ message Value {
 }
 
 message Reply {
-  enums.ResponseCode rc = 1;
+  ResponseCode rc = 1;
 }
 
 message Point {

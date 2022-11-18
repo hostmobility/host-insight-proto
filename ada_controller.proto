@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package ada;
+
+import public "ada_enums.proto";
+
+service RemoteControl {
+  rpc RequestControl (Unit) returns (ControlStatus);
+  rpc SendCommand (CommandUnit) returns (ControlStatus);
+  rpc ControlStream (ControlStatus) returns (stream Command);
+}
+
+message Unit {
+    string serial_number = 1;
+}
+
+message ControlStatus {
+    UnitControlStatus code = 1;
+}
+message CommandUnit {
+    string serial_number = 1;
+    Command cmd = 2;
+}
+
+message Command {
+    string cmd = 1;
+}
