@@ -24,4 +24,5 @@ message CommandUnit {
 
 message Command {
     string cmd = 1;
+    GpioState state = 2;
 }

@@ -20,3 +20,8 @@ enum UnitControlStatus {
   AWAITING_CONTROL = 1;
   UNIT_UNAVAILABLE = 2;
 }
+
+enum GpioState {
+  INACTIVE = 0;
+  ACTIVE = 1;
+}
