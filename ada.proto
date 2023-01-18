@@ -13,7 +13,7 @@ import public "ada_enums.proto";
 
 service Ada {
   rpc HeartBeat (Status) returns (Reply);
-  rpc SendCurrentState (Values) returns (Reply);
+  rpc SendCurrentState (State) returns (Reply);
   rpc SendValues (Values) returns (Reply);
   rpc SendPosition (Point) returns (Reply);
   rpc SendCanMessage (CanMessage) returns (Reply);
