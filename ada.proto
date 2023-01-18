@@ -13,6 +13,7 @@ import public "ada_enums.proto";
 
 service Ada {
   rpc HeartBeat (Status) returns (Reply);
+  rpc SendCurrentState (Values) returns (Reply);
   rpc SendValues (Values) returns (Reply);
   rpc SendPosition (Point) returns (Reply);
   rpc SendCanMessage (CanMessage) returns (Reply);
@@ -21,6 +22,12 @@ service Ada {
 
 message Status {
   StatusCode code = 1;
+}
+
+message State {
+  string sw_version = 1;
+  string config_md5sum = 2;
+  optional string dbc_md5sum = 3;
 }
 
 message Values {
@@ -44,6 +51,15 @@ message ConfigUpdate {
   bytes config = 1;
 }
 
+message IdentityUpdate {
+  string id = 1;
+}
+
+message FetchResource {
+  string url = 1;
+  optional string target_location = 2;
+}
+
 message ControlRequest {
 // Empty for now by design. Might add fields later
 }
@@ -57,8 +73,10 @@ message Reply {
     CarryOn carry_on_msg = 1;
     SoftwareUpdate sw_update_msg = 2;
     ConfigUpdate config_update_msg = 3;
-    ControlRequest control_request_msg = 4;
-    Exit exit_msg = 5;
+    IdentityUpdate identity_update_msg = 4;
+    FetchResource fetch_resource_msg = 5;
+    ControlRequest control_request_msg = 6;
+    Exit exit_msg = 7;
   }
 }
 
