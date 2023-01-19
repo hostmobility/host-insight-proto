@@ -53,6 +53,7 @@ message ConfigUpdate {
 
 message IdentityUpdate {
   string id = 1;
+  string url = 2;
 }
 
 message FetchResource {
