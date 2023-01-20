@@ -52,8 +52,8 @@ message ConfigUpdate {
 }
 
 message IdentityUpdate {
-  string id = 1;
-  string url = 2;
+  string uid = 1;
+  string domain = 2;
 }
 
 message FetchResource {
