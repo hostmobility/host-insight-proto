@@ -7,11 +7,11 @@
 
 syntax = "proto3";
 
-package ada;
+package host_insight;
 
-import public "ada_enums.proto";
+import public "host_insight_enums.proto";
 
-service Ada {
+service Agent {
   rpc HeartBeat (Status) returns (Reply);
   rpc SendCurrentState (State) returns (Reply);
   rpc SendValues (Values) returns (Reply);

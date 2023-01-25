@@ -6,7 +6,7 @@
 // (at your option) any later version.
 
 syntax = "proto3";
-package ada;
+package host_insight;
 
 enum StatusCode {
   OK = 0;
