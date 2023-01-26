@@ -12,7 +12,7 @@ used. See https://grpc.io/ for more details.
 To add this repository as a submodule to an existing project:
 
 ```
-git submodule add git@gitlab.com:hostmobility/ada/proto.git
+git submodule add git@github.com:hostmobility/host-insight-proto.git
 ```
 
 This will automatically pull the main branch. If you pull a repository
